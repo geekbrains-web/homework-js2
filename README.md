@@ -7,7 +7,7 @@
 - [Урок №5, Задание 1](https://geekbrains-web.github.io/homework-js2/Lesson%2005/Basket/) - описание
 - [Урок №5, Задание 2](https://geekbrains-web.github.io/homework-js2/Lesson%2005/Review/) - описание
 - [Урок №6](https://geekbrains-web.github.io/homework-js2/Lesson%2006/) - описание
-- [Урок №7](https://geekbrains-web.github.io/homework-js2/Lesson%2007/) - описание
+- [Урок №7, Задание 1](https://geekbrains-web.github.io/homework-js2/Lesson%2007/dist/) - описание
 
 **Домашние задания выполнил:**
 1. [Владислав Мищенко](https://github.com/vamischenko)
