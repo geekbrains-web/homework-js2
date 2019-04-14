@@ -1,0 +1,21 @@
+{
+  "name": "jasmine-test",
+  "homepage": "https://github.com/vamischenko/js-2-geekbrains",
+  "authors": [
+    "Vladislav Mischenko"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine-core": "^3.4.0"
+  }
+}

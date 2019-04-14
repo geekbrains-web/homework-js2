@@ -28,13 +28,13 @@ gulp.task('default', ['test', 'html', 'sass', 'js', 'json', 'myWatch', 'server']
 gulp.task('html', function () {
     gulp.src([config.app + '/html/index.html'])
         .pipe(gulp.dest(config.dist))
-        .pipe(BS.reload({stream:true}));
+        .pipe(BS.reload({stream: true}));
 });
 
 gulp.task('json', function () {
     gulp.src(config.app + '/json/**/*.json')
         .pipe(gulp.dest(config.dist))
-        .pipe(BS.reload({stream:true}));
+        .pipe(BS.reload({stream: true}));
 });
 
 gulp.task('sass', function () {
@@ -42,14 +42,14 @@ gulp.task('sass', function () {
         .pipe(sass())
         .pipe(cssPrefix())
         .pipe(gulp.dest(config.dist + '/css'))
-        .pipe(BS.reload({stream:true}));
+        .pipe(BS.reload({stream: true}));
 });
 
 gulp.task('js', function () {
     gulp.src(config.app + '/js/**/*.js')
         .pipe(uglifyJs())
         .pipe(gulp.dest(config.dist + '/js'))
-        .pipe(BS.reload({stream:true}));
+        .pipe(BS.reload({stream: true}));
 });
 
 gulp.task('myWatch', function () {
