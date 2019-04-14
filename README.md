@@ -9,6 +9,8 @@
 - [Урок №5, Задание 2](https://geekbrains-web.github.io/homework-js2/Lesson%2005/Review/) - описание
 - [Урок №6](https://geekbrains-web.github.io/homework-js2/Lesson%2006/) - описание
 - [Урок №7, Задание 1](https://geekbrains-web.github.io/homework-js2/Lesson%2007/dist/) - описание
+- [Урок №8, Задание 1](https://geekbrains-web.github.io/homework-js2/Lesson%2008/jasmine-fail.html) - описание
+- [Урок №8, Задание 2](https://geekbrains-web.github.io/homework-js2/Lesson%2008/jasmine-pass.html) - описание
 
 **Домашние задания выполнил:**
 1. [Владислав Мищенко](https://github.com/vamischenko)
