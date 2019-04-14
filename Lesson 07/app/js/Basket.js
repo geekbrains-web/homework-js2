@@ -1,7 +1,7 @@
 /**
  * Класс корзины.
- * 
- * @property {string} idBasket - ID который будет добавляться в 
+ *
+ * @property {string} idBasket - ID который будет добавляться в
  * идентификаторы тегов.
  */
 function Basket(idBasket) {
@@ -20,22 +20,22 @@ function Basket(idBasket) {
  * @return Значение типа String (не нужен, так как его нет в методе)
  */
 Basket.prototype.render = function ($root) {
-  var $basketDiv = $('<div />', {
-      id: this.id,
-      text: 'Корзина'
-  });
+    var $basketDiv = $('<div />', {
+        id: this.id,
+        text: 'Корзина'
+    });
 
-  var $basketItemsDiv = $('<div />', {
-    id: this.id + '_items'
-  });
+    var $basketItemsDiv = $('<div />', {
+        id: this.id + '_items'
+    });
 
-  $basketItemsDiv.appendTo($basketDiv);
-  $basketDiv.appendTo($root);
+    $basketItemsDiv.appendTo($basketDiv);
+    $basketDiv.appendTo($root);
 
 };
 
 /**
- * Метод запрашивает через ajax файл basket.json и получает 
+ * Метод запрашивает через ajax файл basket.json и получает
  * корзину пользователя.
  *
  */
@@ -60,8 +60,7 @@ Basket.prototype.getBasket = function () {
 
             $basketData.appendTo(appendId);
 
-            for (var itemKey in data.basket)
-            {
+            for (var itemKey in data.basket) {
                 this.basketItems.push(data.basket[itemKey]);
             }
         }
@@ -69,8 +68,8 @@ Basket.prototype.getBasket = function () {
 };
 
 /**
- * Метод добавляет товар в корзину, изменяет на странице кол-во товаров, 
- * общую стоимость, также метод создает массив обьектов basketItem в который 
+ * Метод добавляет товар в корзину, изменяет на странице кол-во товаров,
+ * общую стоимость, также метод создает массив обьектов basketItem в который
  * вноситься идентификаторы товаров и их цены.
  *
  * @param idProduct Идентификатор товара
@@ -78,11 +77,11 @@ Basket.prototype.getBasket = function () {
  */
 Basket.prototype.add = function (idProduct, price) {
     var basketItem = {
-      "id_product": idProduct,
-      "price": price
+        "id_product": idProduct,
+        "price": price
     };
 
-    this.amount +=price; //this.amount = this.amount + price
+    this.amount += price; //this.amount = this.amount + price
     this.countGoods++;
     this.basketItems.push(basketItem);
     this.refresh(); //Перерисовка корзины
@@ -100,62 +99,62 @@ Basket.prototype.refresh = function () {
 };
 
 /**
- * Метод удаляет товар из корзины, изменяет на странице кол-во товаров, 
+ * Метод удаляет товар из корзины, изменяет на странице кол-во товаров,
  * общую стоимость.
  *
  * @param idProduct Идентификатор удаляемого товара
  */
 Basket.prototype.remove = function (idProduct) {
-  // поиск товара в корзине
-  var goodNumber = this.find(idProduct);
+    // поиск товара в корзине
+    var goodNumber = this.find(idProduct);
 
     // усли товар в корзине найден
-    if(goodNumber) {
-      // удаление товара из массива с товарами
-      this.basketItems.splice(goodNumber, 1);
-      // получение кол-ва оставшихся товаров и их сумма
-      var result = this.summa(idProduct);
-      // суммарная стоимость товаров в корзине
-      this.amount = result[1];
-      // кол-во товаров в корзине
-      this.countGoods = result[0];
+    if (goodNumber) {
+        // удаление товара из массива с товарами
+        this.basketItems.splice(goodNumber, 1);
+        // получение кол-ва оставшихся товаров и их сумма
+        var result = this.summa(idProduct);
+        // суммарная стоимость товаров в корзине
+        this.amount = result[1];
+        // кол-во товаров в корзине
+        this.countGoods = result[0];
     }
 
-  this.refresh(); //Перерисовка корзины
+    this.refresh(); //Перерисовка корзины
 };
 
 /**
- * Метод ищет товар в корзине и возврашает его номер в массиве, 
+ * Метод ищет товар в корзине и возврашает его номер в массиве,
  * если нашел или false, если не нашел.
  *
  * @param id Идентификатор удаляемого товара
  * @return Значение типа Number или типа Boolean(false)
  */
 Basket.prototype.find = function (id) {
-  var number = false;
+    var number = false;
 
-    this.basketItems.forEach(function(product, index) {
-      if(product.id_product === id) {
-        number = index;
-      }
+    this.basketItems.forEach(function (product, index) {
+        if (product.id_product === id) {
+            number = index;
+        }
     });
-  return number;
+    return number;
 };
 
 /**
- * Метод получает из корзины с товарами их кол-во и  
+ * Метод получает из корзины с товарами их кол-во и
  * суммарную стоимость.
  *
- * @return Массив, где первый элемент - счетчик, а 
+ * @return Массив, где первый элемент - счетчик, а
  * второй - суммарная стоимость.
  */
 Basket.prototype.summa = function () {
-  var goodCount = 0;
-  var goodSumma = 0;
+    var goodCount = 0;
+    var goodSumma = 0;
 
-    this.basketItems.forEach(function(element) {
-      ++goodCount;
-      goodSumma += element.price;
+    this.basketItems.forEach(function (element) {
+        ++goodCount;
+        goodSumma += element.price;
     });
-  return [goodCount, goodSumma];
+    return [goodCount, goodSumma];
 };

@@ -38,15 +38,15 @@ $(document).ready(function () {
         comment.add(idUser, text);
     });
 
-        // 2. Для того, чтобы кнопки заработали, используйте делегаты.
-        //Удаление отзыва
-        $(document).on('click', '.comment-delete', function () {
-            var idComment = parseInt($(this).attr('review-id-for-delete'));
-            comment.remove(idComment);
-        });
-        //Одобрение отзыва
-        $(document).on('click', '.comment-approve', function () {
-            var idComment = parseInt($(this).attr('review-id-for-approve'));
-            comment.approve(idComment);
-        });
+    // 2. Для того, чтобы кнопки заработали, используйте делегаты.
+    //Удаление отзыва
+    $(document).on('click', '.comment-delete', function () {
+        var idComment = parseInt($(this).attr('review-id-for-delete'));
+        comment.remove(idComment);
+    });
+    //Одобрение отзыва
+    $(document).on('click', '.comment-approve', function () {
+        var idComment = parseInt($(this).attr('review-id-for-approve'));
+        comment.approve(idComment);
+    });
 });

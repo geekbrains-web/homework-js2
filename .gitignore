@@ -21,3 +21,4 @@ tmp/
 *.cache-main
 *.iml
 out/
+*.css__js_tmp__

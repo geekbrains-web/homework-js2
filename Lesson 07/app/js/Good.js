@@ -1,6 +1,6 @@
 /**
  * Класс товара.
- * 
+ *
  * @property {number} id - Идентификатор товара
  * @property {string} title - Название товара
  * @property {number} price - Цена товара
